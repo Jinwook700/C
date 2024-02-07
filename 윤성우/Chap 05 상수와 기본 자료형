@@ -1,0 +1,25 @@
+char 1byte
+short 2byte
+int 4byte
+long 4byte
+long long 8byte /정수형
+float 4byte
+double 8byte
+long double 8byte↑/실수
+
+int/long 차이점 : long은 4바이트 고정, int는 플랫폼에 따라 크기가 변한다.
+
+#include <stdio.h>
+
+#include <stdio.h>
+
+int main(void) {
+    int num = 12345;
+    printf("%zu : 변수의 크기 \n", sizeof(num));
+    
+    const int i = 3; //3으로 고정, 변경 불
+    printf("i : %d", i);
+}
+
+
+
