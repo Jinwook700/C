@@ -1,1 +1,16 @@
+#include <stdio.h> //헤더
+
+int main(void) { //출력형태, 함수이름, 입력형태
+
+    printf("Hello world \n");
+    
+    //주석
+    /*
+    행 단위 주석
+    */
+    
+    printf("Hi %d", 100); //문자열 포매팅
+    
+    return 0; //함수를 호출한 영역으로 값 반환, 실행중인 함수 종료
+}
 
