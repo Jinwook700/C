@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(void) {
+    int n = 1; // 선언된 변수에 처음 값을 저장하는 것을 초기화
+               // 초기화 하지 않으면 쓰레기 값이 저저장하는
+    int num;
+    scanf("%d" &num); //키보드 입력 받기
+    int num1, num2, num3;
+    scanf("%d %d %d", &num1, &num2, &num3);
+}
+
