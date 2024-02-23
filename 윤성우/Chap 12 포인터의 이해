@@ -1,0 +1,11 @@
+#include <iostream>
+
+int main(void)
+{
+    int num = 3;
+    int * pnum; // 포인트 변수 pnum 선언, * 위치는 상관없음
+    pnum = &num; // num의 주소 값을 포인터 변수 pnum에 저장
+}
+
+//type * ptr; >> type형 변수의 주소 값을 저장하는 포인트 변수 ptr의 선언
+//& : 오른쪽에 등장하는 피연산자의 주소 값을 반환하는 연산자자
