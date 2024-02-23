@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main()
+{
+    int num=0;
+    int num1=0;
+    
+    while(num<2) // 반복조건(num<2)
+    {
+        printf("Continuous \n");
+        num++;
+    }
+    
+    while(num1<2)
+    printf("Linear \n", num1++); //반복문이 하나의 문장으로 이뤄질 경우, 중괄호 생략가능
+    
+    int num2 = 0;
+    do //do~while : 반복조건이 마지막에 있어, 반복영역을 최소 한번은 실행행
+    {
+        printf("Measurable \n");
+        num2++;
+    } while(num2<4);
+    
+    int num3;
+    for(num3=0; num3<3; num3++) printf("zzz \n"); //반복대상이 한줄이니 중괄호 x , 밑에 - 옆에 쓰는거 가능
+    
+    for(int num4=0; num4<5; num4++) printf("HEE \n");
+}
+
+/*for문 : for(초기식, 조건식, 증감식) */
