@@ -1,0 +1,65 @@
+#include <iostream>
+
+int main()
+{
+    int num1;
+    printf("Input num1 \n");
+    scanf("%d", &num1);
+    if(num1>0)
+    {
+        printf("Num1 is + \n");
+    }
+    
+    
+    
+    int num2, num3;
+    printf("Input num2, num3 \n");
+    scanf("%d %d", &num2, &num3);
+    if(num2>num3)
+    {
+        printf("num2 > num3 \n");
+    }
+    else
+    {
+        printf("num2 < num3 \n");
+    }
+    
+    int num4, num5;
+    printf("Input num4, num5 \n");
+    scanf("%d %d", &num4, &num5);
+    int num6 = (num4>num5) ? num4 : num5; //>면 num4, 아니면 num5
+    printf("num6 : %d", num6);
+    
+    int num7;
+    printf("Input number 1~5 \n");
+    scanf("%d", &num7);
+    
+    switch(num7)
+    {
+        case 1:
+        printf("The num7 is %d \n", num7);
+        break;
+        case 2:
+        printf("The num7 is %d \n", num7);
+        break;
+        case 3:
+        printf("The num7 is %d \n", num7);
+        break;
+        case 4:
+        printf("The num7 is %d \n", num7);
+        break;
+        case 5:
+        printf("The num7 is %d \n", num7);
+        break;
+        
+        default:
+        printf("I don't know \n");
+    }
+    return 0;
+    
+    
+}
+
+/* if ~ else if ~ else if ~ else 
+break, continue
+*/
