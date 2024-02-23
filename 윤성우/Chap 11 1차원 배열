@@ -1,0 +1,36 @@
+#include <iostream>
+
+int arr1[7]; // 길이 7인 int형 1차원 배열
+float arr2[10]; // 길이 10인 float형 1차원 배열
+double arr3[12]; // 길이 12인 double형 1차원 배배열
+
+int arr4[5] = {1, 2, 3, 4, 5};
+int arr5[ ] = {1, 2, 3, 4};// 자동으로 길이 4가 삽입됨
+int arr6[5] = {1, 2};//나머지 다 0으로 삽입
+
+char str[14]="Good morning!";
+char str1[ ]="Happy halloween";
+//마지막에 \0형태의 null문자가 저장되는데, 이의 값은 공백과 다른 0이다.
+
+//arr[idx]=N ; 배열 arr의 idx+1번째 요소에 N을 저장하여라
+
+int main(void)
+{
+    char str2[50];
+    int idx=0;
+    
+    printf("Input str : \n");
+    scanf("%s", str); // &이거 안붙여
+    printf("the str is : %s \n", str);
+    
+    printf("per str : ");
+    while(str[idx] != '\0') // !=는 아니다
+    {
+        printf("%c", str[idx]);
+        idx++;
+    }
+    printf("\n");
+    return 0;
+}
+
+// 문자열의 끝에는 항상 널(null)문자가 저장되어있다(\0) 이걸로 문장 끊기 가능
