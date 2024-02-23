@@ -1,0 +1,61 @@
+#include <iostream>
+
+/* int add(int num1, int num2) //전달인자 O, 반환값 O
+{
+    int result = num1 + num2;
+    return result;
+}
+
+int main(void)
+{
+    int result;
+    result = add(3, 4);
+    printf("add result : %d \n", result);
+    return 0;
+} */
+
+int Add(int num3, int num4)// 인자전달 O, 반환값O
+{
+    return num3 + num4;
+}
+
+void ShowAddresult(int num5)// 인자전달 O, 반환값X
+{
+    printf("The result : %d \n", num5);
+}
+
+int ReadNum(void) //인자전달 X, 반환값O
+{
+    int num5;
+    scanf("%d", &num5);
+    return num5;
+}
+
+void HowToUseThisProg(void) //인자전달 X, 반환값X
+{
+    printf("Input 2 integer \n");
+}
+
+int main(void)
+{
+    int result, num3, num4;
+    HowToUseThisProg();
+    num3 = ReadNum();
+    num4 = ReadNum();
+    result = Add(num3, num4);
+    ShowAddresult(result);
+    return 0;
+}
+
+
+
+
+
+
+
+// int main(void) 반환형태, 함수이름, 입력형태
+// (void) = 빈칸이랑 똑같음
+// return : 함수를 빠져나간다 or 값을 반환한다
+
+//지역변수 : 중괄호에 의해 형성되는 영역 안에서 선언되는 지역변수(local)
+//전역변수 : 중괄호 내 x, 어디서든 접근 가능
