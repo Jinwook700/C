@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    int num1;
+    printf("안녕하세요요 저는 \"푭륑\" 이에요 \n"); // 따움표 넣기 \"
+    printf("A에 숫자 입력하기 \n");
+    scanf("%d", &num1); //scanf 할때 & 신경쓰기
+    printf("A = %d", num1);
+}
+
+/*%X : 데이터를 16진수로 출력하되, 알파벳은 대문자로 출력
+서식문자 종류 - %f : float, %s : char*(문자열), %p : void*(포인터 주소 값)
+*/
