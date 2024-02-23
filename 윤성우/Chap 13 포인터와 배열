@@ -1,0 +1,37 @@
+#include <iostream>
+
+int main(void)
+{
+    int arr[3] = {8, 1, 2}; //arr은 int형 포인트 상수
+    printf("arr name : %p \n", arr); //%p : 변수의 주소, 배열의 이름은 배열의 시작 주소값을 의미한다
+    printf("first object type : %p \n", &arr[0]);
+    printf("second object type : %p \n", &arr[1]);
+    printf("third object type : %p \n", &arr[2]);
+    
+    
+   int arr1[3] = {10, 20, 30};
+   int *ptr = arr1;
+   printf("igemuya : %d %d \n", *arr1, ptr[1]);
+   printf("igemuya : %d \n", arr1[0]);
+   printf("igemuya : %d \n", arr1[1]);
+   printf("difficult : %d \n", *(ptr+2));
+   
+   char str1[] = "Hello Everyone"; // 문자 자체를 저장, 변수 형태의 문자열 선언
+   char * str2 = "Nobody else"; // 상수 형태의 문자열, 문자열 저장, 문자열의 첫 번째 N의 주소반환값이 str2에 저장장
+   printf("%s %s \n", str1, str2);
+   
+   //포인트 배열
+   int num1=3, num2=6, num3=9;
+   int *arr2[3]={&num1, &num2, &num3}; // 길이가 3인 int형 포인트 배열 arr2
+   printf("*arr2[0] : %d \n", *arr2[0]); //주소값에 할당된 값을 불러온다
+   
+   char * strarr[3] = {"Hi", "Hello", "Good"};
+   printf("First : %s \n", strarr[0]);
+   //큰따옴표로 묶여서 표현되는 문자열은, 메모리 공간에 저장된 후 그 주소 값이 반환환다
+   
+   
+   return 0;
+
+}
+
+// arr[i] = *(arr+i)
