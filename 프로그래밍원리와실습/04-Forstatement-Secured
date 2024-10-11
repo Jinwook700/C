@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+main() {
+    int fahr;
+    float temp;
+    fahr = 0;
+    
+    for (;fahr <= 300;) {
+        temp = (5/9)*(fahr-32);
+        printf("%3d%6.1f\n", fahr, temp);
+        fahr = fahr + 20;
+    }
+}
+
+//나누는거 조심해서 봐야함
+//정수끼리 나누면 정수나옴
+//하나라도 바뀌면 자동 형 변환 일어남
