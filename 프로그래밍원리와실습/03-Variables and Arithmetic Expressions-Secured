@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+void main() {
+    //Commnet
+    /* print Fahrenheit-Celsius table
+       for fahr = 0, 20, ... , 300*/ 
+       
+    //Declarations
+    int fahr, celsius;
+    int lower, upper, step;
+    
+    //Variables
+    lower = 0; //limit of temperature scale
+    upper = 300; // upper limit
+    step = 20; // step size
+    
+    fahr = lower;
+    //Loops
+    while (fahr <= upper) {
+        //Arithmetic expressions
+        celsius = 5 * (fahr-32) / 9;
+        //Formatted output
+        printf("%d\t%d\n", fahr, celsius); //'/t' : tab
+        fahr = fahr + step;
+    }
+    
+}
+
+#include <stdio.h>
+
+float main() {
+    //Commnet
+    /* print Fahrenheit-Celsius table
+       for fahr = 0, 20, ... , 300*/ 
+       
+    //Declarations
+    float fahr, celsius;
+    float lower, upper, step;
+    
+    //Variables
+    lower = 0; //limit of temperature scale
+    upper = 300; // upper limit
+    step = 20; // step size
+    
+    fahr = lower;
+    celsius = (5.0/9.0) * (fahr-32.0);
+    printf("%2.0f%6.1f\n", fahr, celsius);
+    //6.1(최소 6칸, 소수 첫째자리까지 표현)
+    // %d : integer, %f : float
+}
+
+#include <stdio.h>
+
+void main() {
+    float fahr, celsius;
+    float lower, upper, step;
+
+    lower = 0;
+    upper = 300;
+    step = 20;
+    
+    fahr = lower;
+
+    while (fahr <= upper) {
+        celsius = 5 * (fahr-32) / 9;
+        printf("%3.0f%6.1F\n", fahr, celsius); 
+        fahr = fahr + step;
+    }
+    
+}
+
