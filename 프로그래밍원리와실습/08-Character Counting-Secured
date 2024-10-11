@@ -1,0 +1,32 @@
+#include <stdio.h>
+void main (void)
+{
+    int nc = 5;
+    printf("[1] nc's value = %d\n", nc++); // Increment after value used
+    printf("[2] nc's value = %d\n", nc);
+    nc =5;
+    printf("[3] nc's value = %d\n", ++nc); //Increment before value used
+    printf("[4] nc's value = %d\n", nc);
+}
+
+#include <stdio.h>
+
+main() {
+    double nc;
+    
+    for (nc = 0; getchar() != EOF; ++nc) {
+        printf("%.0f\n", nc);
+    }
+}
+
+#include <stdio.h>
+
+main()
+{
+    long nc;
+    int c;
+    for (nc = 0; (c = getchar()) != 'q';) {
+        if (c != '\n') ++nc;
+    }
+    printf("%ld\n", nc); //long type
+}
