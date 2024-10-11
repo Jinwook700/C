@@ -1,0 +1,6 @@
+#include <stdio.h> //begining of C source file
+
+void main(void)
+{
+    printf("Hello world!\n");
+}
