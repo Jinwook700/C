@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int digit_sum(int num) {
+    int digit_sum = 0;
+    while(num>0) {
+        digit_sum += (num%10);
+        num /= 10;
+    }
+    
+    return digit_sum;
+}
+
+
+int main() {
+    int sum = 0;
+    for (int i=1; i<=200; i++) {
+        if (i%2 == 0 || i%5 == 0) {
+            sum -= digit_sum(i);
+        }
+        else if (i%digit_sum(i) == 0) {
+            sum -= (sum%i);
+        }
+        else {
+            sum += sum/i;
+        }
+    }
+    printf("%d", sum);
+}
