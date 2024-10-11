@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int sec, m;
+    sec = 0, m = 0;
+    
+    while (sec < 20) {
+        sec += 1;
+        if (sec <= 5) m += 2;
+        else m += 5;
+        printf("%dsec -> %dm\n", sec, m);
+    }
+}
