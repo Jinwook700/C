@@ -1,0 +1,15 @@
+//EOF : End of File
+#include <stdio.h>
+
+int main() {
+    int c;
+    c = getchar(); //Read the next input character
+    
+    while (c != EOF) {
+        putchar(c); //Print a character
+        c = getchar();
+    }
+}
+
+// The precedencce of != is higher than of =
+// () > != >= == > =
