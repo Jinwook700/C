@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+main() {
+    int a,b;
+    float c,d;
+    
+    a= 15;
+    b = a/2;
+    printf("%d\n",b);
+    printf("%3d\n", b);
+    printf("%03d\n", b); //앞에 0 채우기기
+    c= 15.3;
+    d = c/3;
+    printf("%3.2f\n", d);
+}
+
+#include <stdio.h>
+
+main () {
+    int Fahrenheit;
+    
+    for (Fahrenheit = 0; Fahrenheit <= 300; Fahrenheit += 20) {
+        printf("%3d%06.3f\n", Fahrenheit, (5.0/9.0)*(Fahrenheit-32));
+    }
+}
+
+#include<stdio.h>
+main()
+{
+    printf("The color: %s\n", "blue"); //문자열 출력
+    printf("First number: %d\n", 12345); //정수 출력
+    printf("Second number: %04d\n", 25); //앞에 0채운 네자릿수 출력
+    printf("Third number: %i\n", 1234); //d랑 비슷슷
+    printf("Float number: %3.2f\n", 3.14159); //3자리 채우고 소수점 2자리
+    printf("Hexadecimal: %x\n", 255); //16진수 출력
+    printf("Octal: %o\n", 255); //8진수 출력
+    printf("Hexa: %x\n", 255);
+    printf("Unsigned value: %u\n", 150); //부호 없는
+    printf("Just print the percentage sign %%\n", 10); //%%하면 % 출력력
+}
+
+#include<stdio.h>
+main()
+{
+    printf(":%s:\n", "Hello, world!");
+    printf(":%15s:\n", "Hello, world!"); //오른쪽 정렬 15칸
+    printf(":%.10s:\n", "Hello, world!"); //처음 10글자만
+    printf(":%-10s:\n", "Hello,"); //왼쪽 정렬 10칸
+    printf(":%-15s:\n", "Hello, world!");
+    printf(":%.15s:\n", "Hello, world!");
+    printf(":%15.10s:\n", "Hello, world!"); //처음 10글자, 오른쪽 정렬
+    printf(":%-15.10s:\n", "Hello, world!");
+}
