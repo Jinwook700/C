@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAXLINE 1000
+
+int main()
+{
+    char from[MAXLINE] = "Sample Code";
+    char to[MAXLINE];
+    int i;
+    
+    i = 0;
+    
+    while ((to[i] = from[i]) != '\0') ++i; // \0 : 문자열끝
+    
+    printf("The Strings of from array = %s\n", from);
+    printf("The Strings of to array = %s\n", to);
+    
+    return 0;
+    
+    
+}
+
