@@ -42,3 +42,30 @@ void copy(char to[], char from[]) {
     i = 0;
     while((to[i] = from[i]) != '\0') ++i;
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+int maxline = 10;
+void myprintf(char s[]); // using putchar()
+
+int main()
+{
+    int maxline = 20;
+    printf("maxline: %d\n", maxline); //local is first
+    for (int i=0, maxline = 40; i<2; i++, maxline++) { //block first
+        //int maxline = 30;
+        printf("maxline: %d\n", maxline);
+    }
+    char arr[100] = "Hello world!\n";
+    myprintf(arr);
+    maxline = 10;
+    return 0;
+}
+
+void myprintf(char s[]) {
+    for (int i=0; s[i] != '\0'; ++i) {
+        putchar(s[i]);
+    }
+}
+*/
