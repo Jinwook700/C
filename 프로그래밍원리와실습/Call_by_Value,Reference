@@ -1,0 +1,24 @@
+#include <stdio.h>
+ 
+int main(){
+    int *p = NULL;
+    int num = 10;
+ 
+    p = &num;
+    printf("포인터 p가 가리키는 값 : %d\n", *p);
+    printf("num의 값 : %d\n\n",num);
+ 
+    *p += 5;
+    printf("포인터 p가 가리키는 값 : %d\n", *p);
+    printf("num의 값 : %d\n\n",num);
+ 
+    (*p)++;
+    printf("포인터 p가 가리키는 값 : %d\n", *p);
+    printf("num의 값 : %d\n\n",num);
+ 
+    *p++;
+    printf("포인터 p가 가리키는 값 : %d\n", *p);
+    printf("num의 값 : %d\n\n",num);
+ 
+    return 0;
+}
