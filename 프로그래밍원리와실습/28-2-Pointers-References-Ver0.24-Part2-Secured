@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void pointtest(int *pa, int *pb)
+{
+    *pa = *pb;
+    *pb = *pb * 3;
+}
+
+void main()
+
+{
+    int i, x = 1, y = 2, z[10] = {0};
+    int *px, *py;
+    px = &x;
+    py = &y;
+    printf("The value of px = %d\n", *px);
+    *px += 5; *py = *px * 6;
+    pointtest(&x, &y);
+    printf("The value of px = %d\n", *px);
+    
+    for (i=0; i<10; i++) z[i] = i;
+    
+    px = &z[0]; py = &z[0];
+    
+    *(px + 1) = *(py + 3) * 2;
+    *py++;
+    *py = *px + 10;
+    
+    for (i = 0; i<10; i++) printf("z[%d] value: %d", i, z[i]);
+}
