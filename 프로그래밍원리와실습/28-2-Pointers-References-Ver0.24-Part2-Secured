@@ -26,5 +26,5 @@ void main()
     *py++;
     *py = *px + 10;
     
-    for (i = 0; i<10; i++) printf("z[%d] value: %d", i, z[i]);
+    for (i = 0; i<10; i++) printf("z[%d] value: %d ", i, z[i]);
 }
