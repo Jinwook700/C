@@ -25,3 +25,42 @@ void main()
     *ip = 0;
     ip = &z[0];
 }
+
+/*#include <stdio.h>
+
+void swap1(int x, int y);
+void swap2(int *px, int *py);
+void main()
+{
+    int a = 1;
+    int b = 2;
+    printf("swap1 function() is running .... \n");
+    printf("[Before Main funciton] The value of a = %d, The value of b = %d\n", a, b);
+    swap1(a,b);
+    printf("\n[After Main funciton] The value of a = %d, The value of b = %d\n", a, b);
+    printf("\n\nswap2 function() is running .... \n");
+    printf("[Before Main funciton] The value of a = %d, The value of b = %d\n", a, b);
+    swap2(&a,&b);
+    printf("\n[After Main funciton] The value of a = %d, The value of b = %d\n", a, b);
+}
+
+void swap1(int x, int y) // Call by Value
+{
+    int temp;
+    printf("\n[Before swap1 funciton] The value of x = %d, The value of y = %d\n", x, y);
+    temp = x;
+    x = y;
+    y = temp;
+    printf("[After swap1 funciton] The value of x = %d, The value of y = %d\n", x, y);
+}
+
+void swap2(int *px, int *py) // interchange *px and *py Call by Reference
+{
+    int temp;
+    printf("\n[Before swap2 funciton] The value of px = %d, The value of py = %d\n", *px, *py);
+    temp = *px;
+    *px = *py;
+    *py = temp;
+    printf("[After swap2 funciton] The value of px = %d, The value of py = %d\n", *px, *py);
+}*/
+
