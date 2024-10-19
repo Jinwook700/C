@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void main()
+{
+    int x = 1, y = 2, z[10];
+    int *ip;
+    
+    ip = &x;
+    
+    printf("The Memory Address of x = 0x%x\n", &x);
+    printf("The Memory Address of ip = 0x%x\n", ip);
+    
+    printf("The value of x = %d\n", x);
+    printf("The value of ip = %d\n", *ip);
+    
+    ip = &y;
+    
+    printf("The Memory Address of y = 0x%x\n", &y);
+    printf("The Memory Address of ip = 0x%x\n", ip);
+    
+    printf("The value of y = %d\n", y);
+    printf("The value of ip = %d\n", *ip);
+    
+    y = *ip;
+    *ip = 0;
+    ip = &z[0];
+}
