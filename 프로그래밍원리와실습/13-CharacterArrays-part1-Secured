@@ -15,8 +15,45 @@ int main()
     printf("The Strings of from array = %s\n", from);
     printf("The Strings of to array = %s\n", to);
     
-    return 0;
+    i = 0;
+    while ((from[i]) != '\0') {
+        putchar(from[i]);
+        ++i;
+    }
     
+    return 0;
     
 }
 
+
+#strcpy Function
+/*#include <stdio.h>
+#include <stdlib.h>
+#define MAXLINE 1000
+
+void copy(char to[], char from[]);
+
+void main() 
+{
+    char src[MAXLINE] = "Sample Code";
+    char dest[MAXLINE];
+    
+    char src2[MAXLINE] = "Sample Code";
+    char dest2[MAXLINE];
+    
+    printf("The Strings of src array = %s\n", src);
+    
+    copy(dest, src);
+    
+    printf("The Strings of dest array = %s\n", dest);
+    
+    strcpy(dest2, src2);
+    printf("The Strings of dest2 array = %s\n", dest2);
+}
+
+void copy(char to[], char from[])
+{
+    int i;
+    i = 0;
+    while ((to[i] = from[i]) != '\0') ++i;
+}*/
