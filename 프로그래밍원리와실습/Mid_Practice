@@ -1,0 +1,24 @@
+/*printf("%2.0f%6.1f\n", fahr, celsius);
+    //6.1(최소 6칸, 소수 첫째자리까지 표현)
+    
+
+//나누는거 조심해서 봐야함
+//정수끼리 나누면 정수나옴
+//하나라도 바뀌면 자동 형 변환 일어남
+
+// () > != >= == > =
+
+printf("%03d\n", b); //앞에 0 채우기기
+
+printf(":%.10s:\n", "Hello, world!"); //처음 10글자만
+printf(":%-10s:\n", "Hello,"); //왼쪽 정렬 10칸
+
+#include <stdio.h>
+
+main() {
+    double nc;
+    
+    for (nc = 0; getchar() != EOF; ++nc) {
+        printf("%.0f\n", nc);
+    }
+}*/
