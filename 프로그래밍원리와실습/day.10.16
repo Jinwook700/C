@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #define MAXLINE 1000
 
-//function declaration
+// function declaration
 int mygetline(char line[], int maxline);
-void copy(char to[], char from[]) // to : target, from : source
+void copy(char to[], char from[]); // to : target, from : source
 
 int main()
 {
@@ -14,12 +14,17 @@ int main()
     char longest[MAXLINE];
     
     max = 0;
-    while((len = mygetline(line, MAXlINE)) > 0) {
+    // Fix: Correct the spelling of MAXLINE
+    while((len = mygetline(line, MAXLINE)) > 0) {
         if (len > max) {
             max = len;
             copy(longest, line);
         }
-        if (max > 0) printf("%s", longest);
+    }
+    
+    // Fix: Moved the printf statement outside the while loop
+    if (max > 0) {
+        printf("%s", longest);
     }
 }
 
@@ -42,6 +47,7 @@ void copy(char to[], char from[]) {
     i = 0;
     while((to[i] = from[i]) != '\0') ++i;
 }
+
 
 /*
 #include <stdio.h>
