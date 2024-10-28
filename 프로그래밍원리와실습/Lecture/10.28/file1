@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main() {
+    short unsigned int x;
+    typedef short unsigned int USHORT;
+    USHORT y;
+    
+    static unsigned long z;
+    //typedef static unsigned long USLONG; //Cannot use typedef for static
+    typedef unsigned long ULONG;
+    static ULONG a;
+    y = 10;
+    
+    struct point {
+        int x;
+        int y;
+    } //Define point type
+    struct point pt;
+    
+    struct rect {
+        struct point pt1;
+        struct point pt2;
+    }
+    struct rect screen;
+    struct point origin, *pp;
+    origin.x = 320;
+    origin.y = 200;
+    printf("origin.x: %d, origin.y: %d\n", origin.x, origin.y);
+    pp = &origin;
+    printf("origin.x: %d, origin.y: %d\n", (*pp).x, (*pp).y);
+    printf("origin.x: %d, origin.y: %d\n", pp->x, pp->y);
+    struct rect r, *rp = &r;
+    r.pt1.x = 100;
+    printf("r.pt1.x: %d\n", r.pt1.x);
+    rp->pt1.x = 200;
+    printf("r.pt1.x: %d\n", r.pt1.x);
+    (r.pt1).x = 300;
+    printf("r.pt1.x: %d\n", r.pt1.x);
+    (rp->pt1).x = 400;
+    printf("r.pt1.x: %d\n", r.pt1.x);
+    
+    struct mystruct {
+        ULONG a;
+        USHORT b;
+    }
+    typedef struct mystruct STR;
+    STR s1 = {10, 20};
+    printf("%ld %u\n". s1.a, s1.b);
+    
+    typedef struct mystruct2 {
+        ULONG a;
+        USHORT b;
+    } STR2;
+    STR2 s2 = {10, 20};
+    printf("%ld %u\n". s2.a, STR2.b);
+    typedef STR2 *strptr;
+    
+    /*
+    screen.pt1.x = 320;
+    screen.pt1.y = 200;
+    */
+    pt.x = 320;
+    pt.y = 200;
+    printf("pt.x: %d, pt.y: %d\n", pt.x, pt.y);
+    printf("y: %d, sizeof(y): %d\n", y, sizeof(USHORT));
+}
