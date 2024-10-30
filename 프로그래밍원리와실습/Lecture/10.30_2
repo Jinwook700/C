@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct student {
+    int id;
+    char name[20];
+    char major[20];
+    struct student *next;
+};
+
+int main() {
+    int count = 0;
+    struct studet *p, *head = NULL, *tail = NULL;
+    p = (struct student *) malloc(sizeof(struct student));
+    printf("Type ID Name Major\n");
+    while(scanf("%d %s %s", ))
+    return 0;
+}
