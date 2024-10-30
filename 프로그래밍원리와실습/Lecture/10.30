@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define NDEBUG 1
+#include <assert.h>
+
+int main()
+{
+    //assert(1 == 2); //Debugging Marco
+    /*int x = 4;
+    void* q = &x;
+    printf("*d: %d\n", *(int *)q);
+    int* p = q;
+    int j = *((int*)q);*/
+    
+    int *p;
+    int n, i;
+    
+    printf("HOW many ints?");
+    scanf("%d", &n);
+    printf("n: %d", n);
+    p = (int *) malloc(n * sizeof(int));
+    assert(p != NULL);
+    
+    /*
+    if (p == NULL) {
+        printf("No memory space \n");
+        return -1;
+    }
+    */
+    printf("Enter %d integers", n);
+    for (i=0; i<n; i++) scanf("%d", (p + i));
+    printf("Display integers in reverse orders!\n");
+    for (i = n-1; i > 0; --i) printf("%d", *(p + i)); //printf("%d", p[i]);
+    printf("\n");
+    free(p);
+    
+    struct student{
+        int student_id;
+        char name[10];
+    }
+    
+    struct student *a;
+    a = (struct student*) malloc(sizeof(struct student));
+    if ( a == NULL) {printf("No memory space!!\n"); return-1;}
+    a->student_id = 2024234567;
+    //a->name = "Kim Bob";
+    strcpy(a->name, "Kim Bob");
+    
+    struct student *a_list;
+    a_list = (struct student*) malloc(sizeof(struct student)*10);
+    a_list[0].student_id = 2024234567;
+    strcpy(a_list[0].name, "Americano");
+    
+    free(a_list);
+    free(a);
+    return 0;
+}
