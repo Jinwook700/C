@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+//enum day {SUN, MON, TUE, WED, THU, FRI, SAT};
+//enum day {SUN = 0, MON = 1, TUE = 2, WED = 3, THU = 4, FRI = 5, SAT = 6};
+enum day {SUN = 1, MON = 2, TUE = 3, WED = 4, THU = 5, FRI = 6, SAT = 7};
+enum day d;
+enum suit {CLUB = 0, DIAMOND = 2, HEART, SPADE}a,b,c;
+typedef enum day day;
+    
+day find_next_day(day d) {
+    return ((day)(((int)d + 1)%7));
+}
+
+int main() 
+{
+    day nextday;
+    nextday = find_next_day(MON);
+    printf("Nextday: %d\n", nextday);
+    return 0;
+}
