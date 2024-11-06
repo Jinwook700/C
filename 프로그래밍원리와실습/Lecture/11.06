@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+union price {
+    int won;
+    float dollar;
+    float euro;
+};
+
+int main(int argc, char* argv[])
+{
+    printf("argc = %d\n", argc);
+    /*char *str = "ABC 123 ab";
+    char alpha[10];
+    int num;
+    char alpha5[10];
+    
+    sscanf(str, "%s %d %s", alpha, &num, alpha5);
+    printf("%s\n", str);
+    printf("%s\n", alpha);
+    printf("%d\n", num);
+    printf("%s\n", alpha5);
+    
+    char str2[100];
+    int a = 10, b = 20;
+    sprintf(str, "a = %d, b = %d", a, b);
+    printf("%s\n", str2);
+    printf("%d\n", printf("%s\n", str2));
+    printf("%d\n", printf("%s\n", str2));
+    
+    union price bookPrice;
+    bookPrice.won = 10000;
+    printf("bookPrice: %d\n", bookPrice.won);
+    bookPrice.dollor = 100.23;
+    printf("bookPrice: %f\n", bookPrice.dollar);
+    printf("bookPrice: %d\n", bookPrice.won);
+    
+    union A {
+        int j;
+        char j;
+    };
+    union A aa;
+    aa.i = 0x12345678;
+    printf("%x", aa.j);
+    
+    unsigned int value = 1;
+    unsigned char* bytePtr = (unsigned char*)&value;
+    if (*bytePtr == 1) {
+        printf("Little-Endian\n");
+    }else {
+        printf("Big-Endian\n");
+    }
+    
+    fprintf(stderr, "Error!!");
+    fprintf(stdout, "STDOUT\n");
+    printf("\n");
+    
+    int c;
+    
+    c = fgetc(stdin);
+    //printf("%c", c);
+    fputc(c, stdout);*/
+    
+    return 0;
+}
+
+
