@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define INT 0
+#define DOUBLE 1
+
+void printDec(int i) {
+    printf("Demical: %5d\n", i);
+}
+
+void printOct(int i) {
+    printf("Octet: %5o\n", i);
+}
+
+void genericPrint(int type, char *name, void *p) {
+    printf("%s = ", name);
+    switch(type) {
+        case INT :
+            printf("%d\n", *(int *)p);
+            break;
+        case DOUBLE :
+            printf("%f\n", *(double *)p);
+            break;
+        default:
+            printf("..... unknown type !!\n");
+            break;
+    }
+}
+int main() {
+    int i = 191000;
+    double f = 3.14;
+    
+    genericPrint(INT, "i", &i);
+    genericPrint(DOUBLE, "f", &f);
+    
+    void(*fp)(int); // Declare function process return type void, one parameter.int
+    fp = printDec;
+    fp(i);
+    fp = printOct;
+    fp(i);
+    
+    const char* arr[3];
+    arr[0] = "ABC";
+    arr[1] = "DEF";
+    arr[2] = "GHI";
+    
+    printf("arr[0] = %s\n", arr[0]);
+    printf("arr[0]'s value = %p\n", arr[0]);
+    printf("arr[0]'s address = %p\n", &arr[0]);
+    
+    printf("arr[1] = %s\n", arr[1]);
+    printf("arr[1]'s value = %p\n", arr[1]);
+    printf("arr[1]'s address = %p\n", &arr[1]);
+    
+    printf("i's address = %p\n", &i);
+    
+    char (*arr2)[3];
+    
+    char tmp1[3] = {'a', 'b', 'c'};
+    char tmp2[3] = {'d', 'e', 'f'};
+    char tmp3[3] = {'g', 'h', 'i'};
+    
+    arr = &tmp1;
+    for (int i=0; i < sizeof(*arr); i++) {
+        printf("%c", (*arr)[i]);
+    }
+    printf("\n");
+    arr = &tmp2;
+    for (int i=0; i < sizeof(*arr); i++) {
+        printf("%c", (*arr)[i]);
+    }
+    
+    printf("&tmp1 = %p\n", &tmp1);
+    printf("tmp1[0]'s address = %p\n", &tmp1[0]);
+    printf("\n");
+    
+    return 0;
+}
