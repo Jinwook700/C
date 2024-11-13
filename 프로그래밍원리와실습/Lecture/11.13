@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+int mystrlen(char s[]);
+
+int main() {
+    char message[100] = "Hello \0 World!\0\n";
+    
+    printf("The range of int signed is %d to %d\n", INT_MIN, INT_MAX);
+    printf("String: %s, length: %d\n", message, strlen(message));
+    printf("String: %s, length: %d\n", message, mystrlen(message));
+    
+    return 0;
+}
+
+int mystrlen(char s[]) {
+    int i; // length 
+    
+    i = 0;
+    while(s[i] != '\0') ++i;
+    
+    return i;
+}
