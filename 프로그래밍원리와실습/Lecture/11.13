@@ -12,6 +12,7 @@ int main() {
     printf("String: %s, length: %d\n", message, strlen(message));
     printf("String: %s, length: %d\n", message, mystrlen(message));
     
+    int a = 10; b = 20, z;
     
     char strNum[10] = '1234';
     int j;
@@ -43,4 +44,11 @@ int myatoi(const char s[]) {
     }
     
     return n;
+    
+    
+}
+
+int mynewgetline(char s[], int lim){
+    int c, i;
+    
 }
