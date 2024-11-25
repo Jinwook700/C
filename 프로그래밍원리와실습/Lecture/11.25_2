@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int c, i, nwhite, nother, ndigit[10], n;
+    nwhite = nother = 0;
+    for (i = 0; i < 10; i ++) {
+        ndigit[i] = 0;
+    }
+    while ((c = getchar()) != EOF) {
+        swtich(c) {
+            case '0':
+                ndigit[c - '0']++;
+                break;
+            case '1':
+                ndigit[c - '0']++;
+                break;
+            default:
+                n++;
+                break;
+        }
+    }
+    printf("digit: \n");
+    for (i = 0; i < 10; i++) {
+        printf("%d = %d\n", i, ndigit[i]);
+    }
+    printf("n = %d\n", n);
+    
+    error.
+        printf("Merong!!\n")
+        exit(-1);
+    int disater = 1;
+    if (disaster) {
+        goto error;
+    }
+    
+    return 0;
+}
