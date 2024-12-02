@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *fp;
+    
+    fseek(fp, 0L, SEEK_SET); //Move to the begining of file pointed by fp
+    fseek(fp, 100L, SEEK_CUR); //Move to the 100bytes (right direction) from the current file position
+    fseek(fp, 0L, SEEK_END); //Move to end of file pointed by fp
+    //Move to n + 1 record (struct)
+    fseek(fp, n*sizeof(record), SEEK_SET);
+    //Move to the next record
+    fseek(fp, sizeof(record), SEEK_CUR);
+    //Move to the previous record
+    fseek(fp, -sizeof(record), SEEK_CUR);
+    
+    //Assume that if starts from the beginning of file
+    fwrite(&record1, sizeof(record), 1, fp);
+    fwrite(&record2, sizeof(record), 1, fp);
+    fseek(fp, sizeof(record), SEEK_END);
+    fwrite(&record3, sizeof(record), 1, fp);
+    
+    return 0;
+}
