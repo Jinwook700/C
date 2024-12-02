@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAXVAL 100 // Maximum dept of val stack */
+
+int sp = 0; // stack pointer, called top (index or iterator), the next free stack position
+int val[MAXVAL]; // Container(Storage)
+
+int main() {
+    printf("Hello Stack world!!\n");
+    push(1);
+    push(2);
+    printf("%d\n", pop());
+    printf("%d\n", pop());
+    return 0;
+}
+
+void push(int f) {
+    if (sp < MAXVAL) val[sp++] = f;
+    else printf("Stack is FULL!!\n");
+}
+
+int pop(void) {
+    if (sp > 0) return val[--sp];
+    else {
+        printf("Stack is empty!!\n");
+        return -1;
+    }
+}
