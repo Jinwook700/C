@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//static : 정적변수, 프로그램 시작 시 할당, 종료 시 파괴, 정보 은닉 효과
+static int c; //전역 정적 변수, 파일 내 모든곳에서 참조 가능
+
+int static_test(void) {
+    static int d = 10; // 지역 정적 변수, 다른 함수에서 참조 불가능
+}
+
+int main() {
+    int a = 10; 
+    int b = 10;
+    printf("a : %d, b : %d \n", a, b);
+    printf("a : %d, b : %d \n", a++, --b); //a : 10, b : 9
+    printf("a : %d, b : %d \n", a, b);     //a : 11, b : 9
+    printf("a : %d, b : %d \n", ++a, b--); //a : 12, b : 9
+    printf("a : %d, b : %d \n", a, b);     //a : 12, b : 8
+    
+    for (int i=0; i<3; i++) printf("i값 : %d \n", i); //값을 사용하고 증가
+    for (int i=0; i<3; ++i) printf("i값 : %d \n", i); //증가하고 값을 사용
+    
+    printf("외부정적변수 c : %d\n", c); //0으로 자동초기화
+    
+}
