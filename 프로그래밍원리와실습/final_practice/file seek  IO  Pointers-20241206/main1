@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define START_ID 1
+
+struct student {
+    int id;
+    char name[20];
+    int score;
+};
+int main()
+{
+    struct student record;
+    FILE *fp;
+    char c;
+    int id;
+    fp = fopen("abc.bin", "rb");
+    printf("Enter ID to search: ");
+    scanf("%d", &id);
+    fseek(fp, (id - START_ID) * sizeof(record), SEEK_SET);
+    fread(&record, sizeof(record), 1, fp);
+    printf("ID: %d, Name: %s, Score: %d\n", record.id, record.name, record.score);
+    fclose(fp);
+    /*
+    fp = fopen("abc.bin", "wb");
+    printf("%s %7s %6s\n", "ID", "Name", "Score");
+    while (scanf("%d %s %d", &record.id, record.name, &record.score) == 3) {
+        fseek(fp, (record.id - START_ID) * sizeof(record), SEEK_SET);
+        fwrite(&record, sizeof(record), 1, fp);
+    }
+    fclose(fp);
+    */
+    /*
+    FILE *fp;
+
+    fseek(fp, 0L, SEEK_SET);  // Move to the begining of file pointed by fp
+    fseek(fp, 100L, SEEK_CUR);  // Move to the 100bytes (right direction) from the current file position)
+    fseek(fp, 0L, SEEK_END); // Move the end of file pointed by fp
+    // Move to n + 1 record (struct)
+    fseek(fp, n * sizeof(record), SEEK_SET);
+    // Move to the next record
+    fseek(fp, sizeof(record), SEKK_CUR);
+    //Move to the prev record
+    fseek(fp, -sizeof(record), SEEK_CUR);
+
+    // Assume that it starts from the beginning of file
+    fwrite(&record1, sizeof(record), 1, fp);
+    fwrite(&record2, sizeof(record), 1, fp);
+    fseek(fp, sizeof(record), SEEK_END);
+    fwrite(&record3, sizeof(record), 1, fp);
+    */
+    return 0;
+}
