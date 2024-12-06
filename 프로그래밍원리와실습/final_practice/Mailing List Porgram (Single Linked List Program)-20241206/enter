@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "mylib.h"
+
+void inputs(char* prompt, char *s, int count)
+{
+    char p[40];
+  
+    do {
+           myprint(prompt);
+           mygets(p, count);
+           if (strlen(p) > count)
+               printf("\too long\n");
+    } while (strlen(p) > count);
+    strcpy(s, p);
+}
+
+void enter(void)
+{
+    struct address *info;
+    
+    for (;;) {
+        // malloc
+        info = (struct address *)malloc(sizeof(struct address));
+        // Check return value
+        if (!info) {
+           printf("Out of memory!!\n");
+           return;
+        }
+        
+        printf("\nPress just the Enter Key to exit!!\n");  
+        inputs("Enter name: ", info->name, 30);
+
+        // To break an infinite loop
+        if (!info->name[0])
+            break;
+ 
+        inputs("Enter zip: ", info->zip, 10);
+        start = store(info, start);
+    }
+ 
+    // printf("enter() is called...\n");
+}
