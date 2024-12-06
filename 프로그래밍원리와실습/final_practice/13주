@@ -1,0 +1,247 @@
+/*#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+int main(int argc, char *argv[])
+
+{
+
+    FILE *fp;   // File Handler
+
+    int c;
+
+
+
+    fp = fopen(argv[1], "w");
+
+    if (fp == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", "abc.txt");
+
+    }
+
+    c = fgetc(stdin);
+
+    while (c != EOF) {
+
+        fputc(c, fp);
+
+        c = fgetc(stdin);
+
+    }
+
+    fclose(fp);
+
+    return 0;
+
+}
+
+*/
+
+[Class Lab Programming Sources]
+
+
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#define MAXLINE 80
+
+struct student {
+
+    int id;
+
+    char name[20];
+
+    short score;
+
+};
+
+int main(int argc, char *argv[])
+
+{
+
+    FILE *fp1, *fp2;   // File Handler
+
+    int c;
+
+    int line = 0;
+
+    char buffer[MAXLINE];
+
+    struct student record;
+
+
+
+    if (argc != 2) {
+
+        fprintf(stderr, "Command: %s [source file] !!", argv[0]);
+
+        exit(-1);
+
+    }
+
+
+
+    fp1 = fopen(argv[1], "rb");
+
+    if (fp1 == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", argv[1]);
+
+        exit(-1);
+
+    }
+
+   while(fread(&record, sizeof(record), 1, fp1)  > 0)
+
+        printf("%d %s %d\n", record.id, record.name, record.score);
+
+   fclose(fp1);
+
+
+
+    /*
+
+    fp1 = fopen(argv[1], "wb");
+
+    if (fp1 == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", argv[1]);
+
+        exit(-1);
+
+    }
+
+
+
+    while (scanf("%d %s %d", &record.id, record.name, &record.score) == 3)
+
+        fwrite(&record,sizeof(record), 1, fp1);
+
+    fclose(fp1);
+
+    */
+
+    /*
+
+    fp1 = fopen(argv[1], "w");
+
+    if (fp1 == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", argv[1]);
+
+        exit(-1);
+
+    }
+
+    while (scanf("%d %s %d", &record.id, record.name, &record.score) == 3)
+
+        fprintf(fp1, "%d %s %d ", record.id, record.name, record.score);
+
+    fclose(fp1);
+
+    */
+
+    /*
+
+    fp1 = fopen(argv[1], "r");
+
+    if (fp1 == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", argv[1]);
+
+        exit(-1);
+
+    }
+
+   while(fscanf(fp1, "%d %s %d", &record.id, record.name, &record.score) == 3)
+
+        printf("%d %s %d\n", record.id, record.name, record.score);
+
+   fclose(fp1);
+
+   */
+
+    /*
+
+    if (argc != 2) {
+
+        fprintf(stderr, "Command: mytype [source file] !!");
+
+        exit(-1);
+
+    }
+
+    fp1 = fopen(argv[1], "r");
+
+    if (fp1 == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", argv[1]);
+
+        exit(-1);
+
+    }
+
+    while(fgets(buffer, MAXLINE, fp1) != NULL) // read a line by a line
+
+    {
+
+        line++;
+
+        printf("[Line: %3d]: %s", line, buffer);
+
+    }
+
+    */
+
+    /*
+
+    if (argc != 3) {
+
+        fprintf(stderr, "Command: mycopy [source file] [target file]!!");
+
+        exit(-1);
+
+    }
+
+    fp1 = fopen(argv[1], "r");
+
+    if (fp1 == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", argv[1]);
+
+        exit(-1);
+
+    }
+
+
+
+    fp2 = fopen(argv[2], "w");
+
+    if (fp2 == NULL) {
+
+        fprintf(stderr, "Fail to write the file %s\n", argv[2]);
+
+        exit(-1);
+
+    }
+
+    while ((c = fgetc(fp1)) != EOF)
+
+        fputc(c, fp2);
+
+
+
+    fclose(fp1);
+
+    fclose(fp2);
+
+    */
+
+    return 0;
+
+}
