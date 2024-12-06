@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+void myprint(char *ch)
+{
+    while(*ch) {
+        putchar(*ch);
+        ch++;
+    }
+}
+
+void mygets(char str[], int nchars) {
+   
+    int i = 0;
+
+    while((str[i] = getchar()) != '\n') {
+       if (i > nchars-1)
+          break;
+       i++;
+    }
+    str[i] = '\0';
+}
