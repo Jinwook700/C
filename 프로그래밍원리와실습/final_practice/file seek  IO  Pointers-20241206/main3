@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define BUFFSIZE 512
+
+int main()
+{
+    char buffer[BUFFSIZE];
+    size_t bytes;
+    FILE *fin, *fou;
+    fin = fopen("abc.bin", "rb");
+    fou = fopen("copyabc.bin", "wb");
+    if (fin == NULL || fou == NULL) return -1;
+    while((bytes = fread(buffer, 1, BUFFSIZE, fin)) != 0) {
+        if (fwrite(buffer, 1, bytes, fou) != bytes) {
+                fprintf(stderr, "Failed to write\n");
+                exit(-1);
+        }
+    }
+    fclose(fin);
+    fclose(fou);
+    return 0;
+}
