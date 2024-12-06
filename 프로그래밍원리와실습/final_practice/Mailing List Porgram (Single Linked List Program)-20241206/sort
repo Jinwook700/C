@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+#include <string.h>
+
+#include "mylib.h"
+
+/* swap data field of nexted list */
+void swap(struct address *p1, struct address*p2)
+{
+        char tempName[40];
+        char tempZip[40];
+
+	strcpy(tempName, p1->name);
+	strcpy(p1->name, p2->name);
+	strcpy(p2->name, tempName);
+
+	strcpy(tempZip, p1->zip);
+	strcpy(p1->zip, p2->zip);
+	strcpy(p2->zip, tempZip);
+
+}
+
+/* To sort the nexted list */
+void selectionSort(void)
+{
+	struct address *top = start;
+	struct address *traverse;
+	struct address *min;
+	
+	while(top->next)
+	{
+		min = top;
+		traverse = top->next;
+		
+		while(traverse)
+		{
+			/* Find minimum element from array */ 
+			if( strcmp(min->name, traverse->name ) > 0)
+			{
+				min = traverse;
+			}
+			
+			traverse = traverse->next;
+		}
+		swap(top,min);	 // Put minimum element on toping location
+		top = top->next;
+	}
+} 
+ 
+
