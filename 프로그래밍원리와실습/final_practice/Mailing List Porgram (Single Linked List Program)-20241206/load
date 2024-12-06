@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#include "mylib.h"
+
+void load(void)
+{
+    FILE *fp;
+    struct address *info, *temp = NULL;
+    
+     // Open a file to save the list
+    if((fp = fopen("mlist", "rb")) == NULL) {
+       printf("cannot open file\n");
+       exit(1);
+    } 
+ 
+    while(start) {
+        info = start->next;
+        free(start);
+        start = info;
+    }
+
+    printf("\nLoading file ... \n");
+    printf("\n==== Loading Info =====\n");
+    
+    start = (struct address *) malloc(sizeof(struct address));
+    if (!start) {
+        printf("Out of memory!!\n");
+        return;
+    }
+
+    info = start;
+    while (!feof(fp)) {
+        if (1 != fread(info, sizeof(struct address), 1, fp))
+            break;
+        // Get memory for next
+        printf("List element with name: %s is loaded7 into the file...\n", info->name);
+        info->next = (struct address *)malloc(sizeof(struct address));
+        if (!info->next) {
+            printf("Out of memory!!\n");
+            return;
+        }
+        temp = info;
+        info = info->next;
+    }
+    temp->next = NULL; // Last entry
+    last = temp;
+    
+    //if (info->next != NULL)
+    //    free(info->next);
+
+    printf("======= End =======\n\n");
+    
+    fclose(fp);
+}
