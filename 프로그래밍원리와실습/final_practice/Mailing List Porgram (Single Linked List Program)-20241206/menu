@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "mylib.h"
+
+int menuSelect(void)
+{
+    char select[80];
+    int  num;
+
+    do {
+        printf("\n==================\n");
+        printf("1. Enter a name\n");
+        printf("2. Delete a name\n");
+        printf("3. Display\n");
+        printf("4. Search\n");    // Homework
+        printf("5. Sort\n");   // Homework
+        printf("6. Save the file\n");
+        printf("7. Load the file\n");
+        printf("8. Quit\n");
+        printf("==================\n");
+        printf("\n>>> Enter your choice: ");
+
+        // Get a string from the keyboard
+        mygets(select, 10);
+        // Ascii to integer
+        num = atoi(select);
+        // printf("Selection Menu: %s\n", select);
+        //printf("Selection Menu: %d\n", num);
+    } while (num < 0 || num > 8);
+    
+    return num;     
+}
