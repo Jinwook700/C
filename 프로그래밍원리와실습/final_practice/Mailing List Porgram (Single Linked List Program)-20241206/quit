@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "mylib.h"
+
+void quit(void)
+{
+    struct address* info;
+    struct address* top;
+     
+    top = start; 
+    while(top)
+    {
+        info = top->next;
+        printf("Memory for the list element with name: %s is free...\n", top->name); 
+        free(top);
+        top = info;
+    }
+}
