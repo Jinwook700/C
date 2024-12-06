@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#include "mylib.h"
+
+void save(void)
+{
+    FILE *fp;
+    struct address* info;
+    
+     // Open a file to save the list
+    if((fp = fopen("mlist", "wb")) == NULL) {
+       printf("cannot open file\n");
+       exit(1);
+    } 
+  
+    printf("\nSaving file ... \n");
+    printf("\n==== Saving Info =====\n");
+    
+    info = start;
+    while (info) {
+        printf("List element with name: %s is saved into the file...\n", info->name);
+        fwrite(info, sizeof(struct address), 1, fp);
+        info = info->next;
+
+    }
+
+    printf("======= End =======\n\n");
+    
+    fclose(fp);
+}
