@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#include "mylib.h"
+
+struct address* start;
+struct address* last;
+
+int main(void)
+{
+    int choice;
+
+    // Initialization
+    start = last = NULL;
+
+    for(;;) {
+        choice = menuSelect();
+
+        switch(choice) {
+            case 1:
+                    enter(); 
+                    break;
+            case 3:
+                    display();
+                    break;
+			case 5:
+					selectionSort();
+					break;
+            case 6:
+                    save();
+                    break;
+            case 7:
+                    load();
+                    break;
+            case 8:
+                    quit(); 
+                    exit(0);
+                    break;
+        
+        } // switch(choice)
+    } // for(;;)
+
+    return 0;
+}
