@@ -1,0 +1,75 @@
+/*[Student Question 1] int* p => int *p (much better)
+So, int* p, q ,r is the same int *p, int *q, int *r (or int *p, *q, *r) ?
+
+[Student Question2] 
+p = [without (struct student *)malloc(sizeof(struct student);
+is working!! why?
+
+=> Probably, gcc supports automatic type casting..
+
+Is scanf() working correctly? => It looks wierd!! */
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+
+
+struct  student {
+
+    int id;
+
+    char name[20];
+
+    char major[20];
+
+    struct student *next;
+
+};
+
+int main()
+
+{
+
+    int count = 0;
+
+    struct student *p, *head = NULL, *tail = NULL;
+
+    p = (struct student *) malloc(sizeof(struct student));
+
+    printf("Type ID Name Major\n");
+
+    while(scanf("%d %s %s", &p->id, p->name, p->major) == 3) {
+
+        p->next = NULL;
+
+        if (head == NULL)
+
+            head = p;
+
+        else
+
+            tail->next = p;
+
+        tail = p;
+
+        p = (struct student *) malloc(sizeof(struct student));
+
+     }
+
+    printf("\n Display Single linked list\n");
+
+    p = head;
+
+    while (p != NULL) {
+
+        printf("id: %d, Name: %s, Major: %s\n", p->id, p->name, p->major);
+
+        p= p->next;
+
+    }
+
+    return 0;
+
+}
+
