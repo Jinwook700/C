@@ -1,0 +1,95 @@
+/*Imagine 100 lockers numbered 1 to 100 with 100 students lined up in front of those 100 lockers:
+
+The first student opens every locker.
+
+The second student closes every 2nd locker.
+
+The 3rd student changes every 3rd locker; if it’s closed, she opens it; if it’s open, she closes it.
+
+The 4th student changes every fourth locker.
+
+The 5th student changes every 5th locker.
+
+That same pattern continues for all 100 students.
+
+Here’s the question: “Which lockers are left open after all 100 students have walked the row of lockers?”
+
+Use the following codes while exploiting some bit operations!!
+
+
+
+#include <stdio.h>
+
+unsigned long long locker_lower = 0;
+unsigned long long locker_upper = 0;
+
+void toggle(int n) {
+if (n < ??) {
+locker_lower ?? (1ULL << ???);
+}
+else {
+locker_upper ?? (1ULL << (??? - ???));
+}
+}
+
+int isOpen(int n) {
+if (n < ??) {
+return (locker_lower >> ??? ) & ??;
+}
+else {
+return (locker_upper >> (???? - ???)) & ????;
+}
+}
+
+int main() {
+for (int i = 1; i <= ????; i++) {
+for (int j = ????; j <= ?????; ??? ???  ???) {
+toggle(???? - ????);
+}
+}
+
+for (int i = 0; i < ???? ; i++) {
+if (isOpen(????)) {
+printf("%d ", ???? + 1);
+}
+}
+
+return 0;
+}*/
+
+#include <stdio.h>
+
+unsigned long long locker_lower = 0;
+unsigned long long locker_upper = 0;
+
+void toggle(int n) {
+    if (n < 64) {
+        locker_lower ^= (1ULL << n);
+    } else {
+        locker_upper ^= (1ULL << (n - 64));
+    }
+}
+
+int isOpen(int n) {
+    if (n < 64) {
+        return (locker_lower >> n) & 1;
+    } else {
+        return (locker_upper >> (n - 64)) & 1;
+    }
+}
+
+int main() {
+    for (int i = 1; i <= 100; i++) {
+        for (int j = i; j <= 100; j += i) {
+            toggle(j - 1);
+        }
+    }
+
+    for (int i = 0; i < 100; i++) {
+        if (isOpen(i)) {
+            printf("%d ", i + 1);
+        }
+    }
+
+    return 0;
+}
