@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include "mylib.h"
+
+void display()
+{
+    struct address *top;
+
+    top =  start;
+    printf("\n==== Display Info =====\n");
+    while(top)
+    {
+        printf("Name: %s, Zip: %s\n", top->name, top->zip);
+        top = top->next;
+    }
+    printf("======= End =======\n\n");
+} 
