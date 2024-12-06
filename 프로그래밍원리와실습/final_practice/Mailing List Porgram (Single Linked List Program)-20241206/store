@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "mylib.h"
+
+struct address* store(i, top)
+struct address* i;
+struct address* top;
+{
+ 
+    start = top;
+    // If a list is empty
+    if(!last) {
+       i->next = NULL;
+       last = i;
+       return i; 
+    }
+
+    // if a list is not empty
+    last->next = i;
+    i->next = NULL;
+    last = i;
+ 
+    return start;
+
+}
