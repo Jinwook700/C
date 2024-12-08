@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+unsigned getbits(unsigned x, int p, int n);
+
+int main()
+{
+    int num = 15;
+    int outcome;
+    
+    outcome = getbits(num, 2, 2);
+    
+    printf("num= %x\n", num);
+    printf("outcome= %x\n", outcome);
+}
+
+// getbits: get n bits from position p
+
+unsigned getbits(unsigned x, int p, int n)
+
+{
+    return (x >> (p+1-n)) & ~(~0 << n);
+}
