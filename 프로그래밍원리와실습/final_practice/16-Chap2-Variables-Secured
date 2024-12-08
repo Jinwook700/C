@@ -1,1 +1,17 @@
-엄준식
+/*short int sh -> 16 bits long -> short sh
+long int counter -> at least 32 bits long -> long sh
+
+unsigned numbers : always positive or zero*/
+
+#include <stdio.h>
+#include <limits.h>
+int main() {
+    printf("The range of int signed is %d to %d\n",INT_MIN, INT_MAX);
+    printf("The range of char signed is %d to %d\n", CHAR_MIN, CHAR_MAX);
+    printf("The range of short signed is %d to %d\n", SHRT_MIN, SHRT_MAX);
+    printf("The range of long signed is %ld to %ld\n\n", LONG_MIN, LONG_MAX);
+    printf("The range of int unsigned is 0 to %u\n", UINT_MAX);
+    printf("The range of char unsigned is 0 to %u\n", UCHAR_MAX);
+    printf("The range of short unsigned is 0 to %u\n", USHRT_MAX);
+    printf("The range of long unsigned is 0 to %lu\n", ULONG_MAX);
+}
