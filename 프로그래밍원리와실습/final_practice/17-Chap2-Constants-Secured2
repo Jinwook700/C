@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int mystrlen(char s[]);
+int main()
+{
+    char message[100] = "Hello World!!";
+    printf("Message: %s Length: %d\n", message, mystrlen(message));
+    printf("Message: %s Length: %d\n", "Hello World!!", mystrlen("Hello World!!"));
+    printf("Message: %s Length: %d\n", message, mystrlen(message));
+    printf("\n\n");
+    printf("Message: %s Length: %d\n", message, strlen(message));
+    printf("Message: %s Length: %d\n", "Hello World!!", strlen("Hello World!!"));
+}
+/* strlen: return length of s */
+int mystrlen(char s[])
+{
+    int i;
+    
+    i = 0;
+    while (s[i] != '\0') ++i;
+    
+    return i;
+}
+
+//• Examples
+//enum escapes { BELL = '\a', BACKSPACE = '\b', TAB = '\t', NEWLINE = '\n', VTAB = '\v', RETURN = '\r' };
+//enum months { JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC };
+/* FEB = 2, MAR = 3, etc. */
+
+//시작 안쓰면 기본 0 시작, 보통 1씩 증가
+
+/*#include <stdio.h>
+int main(void)
+{
+    enum boolean {NO, YES};
+    enum months { JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC };
+    //FEB = 2, MAR = 3, etc.
+    printf("NO's value = %d\n", NO);
+    printf("NO's value = %d\n", YES);
+    printf("JAN's value = %d\n", JAN);
+    printf("DEC's value = %d\n", DEC);
+}*/
