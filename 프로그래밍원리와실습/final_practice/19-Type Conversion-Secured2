@@ -1,0 +1,38 @@
+#include <stdio.h>
+#define MAXLINE 1000
+
+int lower(int c);
+int newgetline(char s[],int lim);
+int main()
+{
+    char line[MAXLINE];
+    printf("Type your string: ");
+    while (newgetline(line, MAXLINE) > 0) {
+        printf("Converted string: %s\n", line);
+        printf("Type your string: ");
+    }
+}
+
+/* lower: convert c to lower case; ASCII only */
+int lower(int c)
+{
+    if (c >= 'A' && c <= 'Z') return c + 'a' - 'A';
+    else return c;
+}
+
+/* getline: read a line into s, return length */
+int newgetline(char s[],int lim)
+{
+    int c, i;
+    int newc;
+    for (i=0; i < lim-1 && (c=getchar())!=EOF && c!='\n'; ++i) {
+        newc = lower(c);
+        s[i] = newc;
+    }
+    if (c == '\n') {
+        s[i] = c;
+        ++i;
+    }
+    s[i] = '\0';
+    return i;
+}
