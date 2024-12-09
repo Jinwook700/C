@@ -1,0 +1,23 @@
+//z = (a > b) ? a : b; /* z = max(a, b) */
+#include <stdio.h>
+int main()
+{
+    int a, b, z, i, n;
+    int line[100];
+    a = 10;
+    b =5;
+    
+    if (a > b) z = a;
+    else z = b;
+    printf("Maximum value = %d\n", z);
+    
+    a = 20;
+    b = 15;
+    z = (a > b) ? a : b; /* z = max(a, b) */
+    printf("Maximum value = %d\n", z);
+    
+    n = 31;
+    for (i = 0; i < n; i++)
+    printf("%6d%c", line[i]=i, (i%10==9 || i==n-1) ? '\n' : ' ');
+    printf("You have %d items %s.\n", n, n==1 ? "" : "s");
+}
