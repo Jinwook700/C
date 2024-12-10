@@ -10,9 +10,50 @@ struct student {
 
 int main() {
     int count = 0;
-    struct studet *p, *head = NULL, *tail = NULL;
-    p = (struct student *) malloc(sizeof(struct student));
+    struct student *p, *head = NULL, *tail = NULL;
+    
     printf("Type ID Name Major\n");
-    while(scanf("%d %s %s", ))
+    
+    while (1) {
+        // 새 학생 노드 생성
+        p = (struct student *) malloc(sizeof(struct student));
+        if (!p) {
+            printf("Memory allocation failed!\n");
+            return -1;
+        }
+        
+        // 사용자 입력
+        if (scanf("%d %s %s", &p->id, p->name, p->major) != 3) {
+            free(p);  // 입력 실패 시 메모리 해제
+            break;
+        }
+        
+        // 연결 리스트의 끝에 추가
+        p->next = NULL;
+        if (head == NULL) {
+            head = p;  // 첫 번째 노드
+        } else {
+            tail->next = p;  // 기존 tail의 다음 노드로 연결
+        }
+        tail = p;  // tail 갱신
+        count++;
+    }
+    
+    // 입력 결과 출력
+    printf("\nStudents List:\n");
+    p = head;
+    while (p) {
+        printf("ID: %d, Name: %s, Major: %s\n", p->id, p->name, p->major);
+        p = p->next;
+    }
+    
+    // 메모리 해제
+    p = head;
+    while (p) {
+        struct student *temp = p->next;
+        free(p);
+        p = temp;
+    }
+    
     return 0;
 }
