@@ -2,7 +2,7 @@
 
 int main() {
     short unsigned int x;
-    typedef short unsigned int USHORT;
+    typedef short unsigned int USHORT; //새로운 타입
     USHORT y;
     
     static unsigned long z;
@@ -14,13 +14,13 @@ int main() {
     struct point {
         int x;
         int y;
-    } //Define point type
+    }; //Define point type
     struct point pt;
     
     struct rect {
         struct point pt1;
         struct point pt2;
-    }
+    };
     struct rect screen;
     struct point origin, *pp;
     origin.x = 320;
@@ -42,17 +42,17 @@ int main() {
     struct mystruct {
         ULONG a;
         USHORT b;
-    }
+    };
     typedef struct mystruct STR;
     STR s1 = {10, 20};
-    printf("%ld %u\n". s1.a, s1.b);
+    printf("%ld %u\n", s1.a, s1.b);
     
     typedef struct mystruct2 {
         ULONG a;
         USHORT b;
     } STR2;
     STR2 s2 = {10, 20};
-    printf("%ld %u\n". s2.a, STR2.b);
+    printf("%ld %u\n", s2.a, s2.b);
     typedef STR2 *strptr;
     
     /*
