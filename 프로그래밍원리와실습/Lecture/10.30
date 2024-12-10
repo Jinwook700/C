@@ -18,8 +18,8 @@ int main()
     printf("HOW many ints?");
     scanf("%d", &n);
     printf("n: %d", n);
-    p = (int *) malloc(n * sizeof(int));
-    assert(p != NULL);
+    p = (int *) malloc(n * sizeof(int)); //malloc은 메모리 할당당
+    assert(p != NULL); //실패시 강제종료
     
     /*
     if (p == NULL) {
@@ -32,12 +32,12 @@ int main()
     printf("Display integers in reverse orders!\n");
     for (i = n-1; i > 0; --i) printf("%d", *(p + i)); //printf("%d", p[i]);
     printf("\n");
-    free(p);
+    free(p); //메모리 해제, 누수 방지지
     
     struct student{
         int student_id;
         char name[10];
-    }
+    };
     
     struct student *a;
     a = (struct student*) malloc(sizeof(struct student));
